@@ -49,10 +49,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function coldAdd(){
             cold_count = cold_count + 1;
         }
-<p id="results"></p>
-	var resultText = document.getElemecntById("results");
-resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
-<p id="results"></p>
+
 	
   </script>
 
@@ -117,7 +114,11 @@ resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> 
 	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
     <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 	</div>
-	
+<div class="page" id="results">
+	<p id="results"></p>
+	var resultText = document.getElemecntById("results");
+resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+<p id="results"></p>
 </div>	
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
