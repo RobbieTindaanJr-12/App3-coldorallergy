@@ -1,9 +1,10 @@
 <!DOCTYPE html> 
 <html> 
+//The code first starts with an introduction and a disclaimer.
 <!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
  
 THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
+
  
 Authors in chronological order of contribution:
 Tim Riedel
@@ -34,23 +35,24 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
-
+//The code below are the functions used for calculation.
 <script>
-
+//States the variabales used.
         var allergy_count = 0;
         var cold_count = 0;
 
-
+//Adds 1 when the user picks an allergy count.
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 		
 
         }
-
+//Adds 1 when the user picks a cold count.
         function coldAdd(){
             cold_count = cold_count + 1;
 			
         }
+//Variables and math for the results
 function showResults(){
 	var total=allergy_count+cold_count
 
@@ -58,7 +60,7 @@ function showResults(){
 	var coldPercent=Math.round((cold.count/total)*100);
 
 	var resultText=document.getElementById("results");
-
+//Updates the HTML in the paragraph with the results
 	resultText.innerHTML=
 		"Probability it is Allergies = "+ allergyPercent +" %<br>"+
 		"Proability it is a Cold= " + coldPercent + "%";
@@ -108,6 +110,7 @@ function showResults(){
 </div>
 	
 
+//Creates page one and question 1, Yes:Allergies, No:Cold
 	
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
@@ -126,6 +129,7 @@ function showResults(){
     	</div>
 </div>
 
+//Page and question 2, Yes:Cold, No:Allergies
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -141,6 +145,7 @@ function showResults(){
 	</div>
 	
 </div>
+//Page and question 3, Yes:Cold, No:Allergies
 <div class="page" id="three">
 <div class="w3-container w3-flat-carrot">
 	<h1>Question 3</h1>
@@ -152,7 +157,8 @@ function showResults(){
     <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 	</div>
 </div>
-	
+
+//Page and question 4, Yes:Allergies, No:Cold
 <div class="page" id="four">
 <div class="w3-container w3-flat-carrot">
 	<h1>Question 4</h1>
@@ -164,10 +170,9 @@ function showResults(){
     <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
 	</div>
 </div>
-
-
-
 	
+//Results page, codes for math and display of results
+
 <div class="page" id="resultsPage">
 <div class="w3-container w3-flat-carrot">
 	<h1>Your Results</h1>
