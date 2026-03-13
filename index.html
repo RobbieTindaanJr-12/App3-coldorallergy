@@ -58,17 +58,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!-- Variables and math for the results -->
 
 function showResults(){
-	var total=allergy_count+cold_count
+    var total = allergy_count + cold_count;
 
-	var allergyPercent = Math.round((allergy_count / total) * 100);
-	var coldPercent = Math.round((cold_count / total) * 100);
-	
-	var resultText=document.getElementById("results");
+    if(total == 0){
+        document.getElementById("results").innerHTML = "No answers recorded.";
+        return;
+    }
 
-<!-- Updates the HTML in the paragraph with the results -->
-	resultText.innerHTML=
-		"Probability it is Allergies = "+ allergyPercent +" %<br>"+
-		"Proability it is a Cold= " + coldPercent + "%";
+    var allergyPercent = Math.round((allergy_count / total) * 100);
+    var coldPercent = Math.round((cold_count / total) * 100);
+
+    var resultText = document.getElementById("results");
+
+    resultText.innerHTML =
+        "Probability it is Allergies = " + allergyPercent + "%<br>" +
+        "Probability it is a Cold = " + coldPercent + "%";
 }
 	
   </script>
